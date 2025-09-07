@@ -4,6 +4,8 @@
  */
 package tools;
 
+import javax.swing.JCheckBox;
+import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JTextField;
 
@@ -17,11 +19,20 @@ public class Util {
             componentes[i].setEnabled(valor);           
         }
     }
-    public static void limpar(JTextField ... componentes){  
+    public static void limpar(JComponent ... componentes){  
         for (int i = 0; i < componentes.length; i++) {
             
-            ((JTextField)componentes[i]).setText("");
+            if (componentes[i] instanceof JTextField) {
+                ((JTextField) componentes[i]).setText("");
+            }
+            else if (componentes[i] instanceof JComboBox) {
+                ((JComboBox<?>) componentes[i]).setSelectedIndex(-1); 
+            }
+            else if (componentes[i] instanceof JCheckBox) {
+                ((JCheckBox) componentes[i]).setSelected(false);
+            }
             
-        }
+        }     
     }
 }
+
