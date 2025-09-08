@@ -6,6 +6,7 @@
 package view;
 
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.YES_NO_OPTION;
 import tools.Util;
 
 
@@ -265,6 +266,7 @@ public class JDlgUsuarios extends javax.swing.JDialog {
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
         Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
+        Util.perguntar("Deseja Excluir o registro?");
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
 
@@ -277,7 +279,7 @@ public class JDlgUsuarios extends javax.swing.JDialog {
 
     private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
         // TODO add your handling code here: 
-        
+        Util.mensagem("Não Implementado");
 
     }//GEN-LAST:event_jBtnPesquisarActionPerformed
 
