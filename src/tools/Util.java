@@ -12,8 +12,11 @@ import java.util.logging.Logger;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
+import javax.swing.JFormattedTextField;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.text.PasswordView;
 
 /**
  *
@@ -27,7 +30,6 @@ public class Util {
     }
     public static void limpar(JComponent ... componentes){  
         for (int i = 0; i < componentes.length; i++) {
-            //Como o JtextField é pai do formatted e do password não precisa do instanceof para eles
             if (componentes[i] instanceof JTextField) { //Vê se o componentes pode ou já foi um JTextField/ JComboBox e etc
                 ((JTextField) componentes[i]).setText("");//Transforma o componentes[i] que é JComponent que não tem setText em jTextField que tem setText
             }
@@ -37,7 +39,6 @@ public class Util {
             if (componentes[i] instanceof JCheckBox) {
                 ((JCheckBox) componentes[i]).setSelected(false);
             }
-            
         }     
     }
     public static void mensagem(String cad) {

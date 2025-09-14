@@ -19,7 +19,11 @@ public class JDlg_Fornecedor extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setTitle("Cadastro de Fornecedor");
-        setLocationRelativeTo(null);        
+        setLocationRelativeTo(null);
+        Util.habilitar(false, jTxt_Codigo, jTxt_Bairro, jTxt_Cidade, jTxt_Email,
+                jTxt_Endereco, jTxt_Estado, jTxt_Nome, jTxt_NomeSite, jTxt_Pais,
+                jFmt_Cep, jFmt_Cnpj, jFmt_DataCadastro, jFmt_DataNascimento, jFmt_Rg, jFmt_Telefone,
+                jBtn_Confirmar, jBtn_Cancelar);
     }
 
     /**
@@ -327,29 +331,54 @@ public class JDlg_Fornecedor extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtn_AlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_AlterarActionPerformed
-        Util.habilitar(true, jTxtNome, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jPwfSenha, jCboNivel, jChbAtivo, jBtn_Confirmar, jBtn_Cancelar);
-        Util.habilitar(false, jBtn_Incluir, jBtn_Alterar, jBtn_Excluir, jBtn_Pesquisar, jTxtCodigo);
-        jTxtNome.grabFocus();
+        Util.habilitar(true, jTxt_Codigo, jTxt_Bairro, jTxt_Cidade, jTxt_Email,
+        jTxt_Endereco, jTxt_Estado, jTxt_Nome, jTxt_NomeSite, jTxt_Pais,
+        jFmt_Cep, jFmt_Cnpj, jFmt_DataCadastro, jFmt_DataNascimento, jFmt_Rg, jFmt_Telefone,
+        jBtn_Confirmar, jBtn_Cancelar);
+        
+        Util.habilitar(false, jBtn_Incluir, jBtn_Alterar, jBtn_Excluir, jBtn_Pesquisar, jTxt_Codigo);
+        
+        jTxt_Nome.grabFocus();
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtn_AlterarActionPerformed
 
     private void jBtn_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ExcluirActionPerformed
         // TODO add your handling code here:
-        Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
-        Util.perguntar("Deseja Excluir o registro?");
+        if (Util.perguntar("Deseja realmente excluir o registro?")){
+            Util.limpar( jTxt_Codigo, jTxt_Bairro, jTxt_Cidade, jTxt_Email,
+            jTxt_Endereco, jTxt_Estado, jTxt_Nome, jTxt_NomeSite, jTxt_Pais,
+            jFmt_Cep, jFmt_Cnpj, jFmt_DataCadastro, jFmt_DataNascimento, jFmt_Rg, jFmt_Telefone);
+            Util.mensagem("Registro excluído com sucesso!");
+        } else {
+            Util.mensagem("Exclusão cancelada.");
+        }
     }//GEN-LAST:event_jBtn_ExcluirActionPerformed
 
     private void jBtn_ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ConfirmarActionPerformed
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jPwfSenha, jCboNivel, jChbAtivo, jBtn_Confirmar, jBtn_Cancelar);
+        Util.habilitar(false, jTxt_Codigo, jTxt_Bairro, jTxt_Cidade, jTxt_Email,
+        jTxt_Endereco, jTxt_Estado, jTxt_Nome, jTxt_NomeSite, jTxt_Pais,
+        jFmt_Cep, jFmt_Cnpj, jFmt_DataCadastro, jFmt_DataNascimento, jFmt_Rg, jFmt_Telefone,
+        jBtn_Confirmar, jBtn_Cancelar);
+        
         Util.habilitar(true, jBtn_Incluir, jBtn_Alterar, jBtn_Excluir, jBtn_Pesquisar);
-        Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
+        
+        Util.limpar( jTxt_Codigo, jTxt_Bairro, jTxt_Cidade, jTxt_Email,
+        jTxt_Endereco, jTxt_Estado, jTxt_Nome, jTxt_NomeSite, jTxt_Pais,
+        jFmt_Cep, jFmt_Cnpj, jFmt_DataCadastro, jFmt_DataNascimento, jFmt_Rg, jFmt_Telefone);
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtn_ConfirmarActionPerformed
 
     private void jBtn_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_CancelarActionPerformed
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jPwfSenha, jCboNivel, jChbAtivo, jBtn_Confirmar, jBtn_Cancelar);
+        Util.habilitar(false, jTxt_Codigo, jTxt_Bairro, jTxt_Cidade, jTxt_Email,
+        jTxt_Endereco, jTxt_Estado, jTxt_Nome, jTxt_NomeSite, jTxt_Pais,
+        jFmt_Cep, jFmt_Cnpj, jFmt_DataCadastro, jFmt_DataNascimento, jFmt_Rg, jFmt_Telefone,
+        jBtn_Confirmar, jBtn_Cancelar);
+        
         Util.habilitar(true, jBtn_Incluir, jBtn_Alterar, jBtn_Excluir, jBtn_Pesquisar);
-        Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
+        
+        Util.limpar( jTxt_Codigo, jTxt_Bairro, jTxt_Cidade, jTxt_Email,
+        jTxt_Endereco, jTxt_Estado, jTxt_Nome, jTxt_NomeSite, jTxt_Pais,
+        jFmt_Cep, jFmt_Cnpj, jFmt_DataCadastro, jFmt_DataNascimento, jFmt_Rg, jFmt_Telefone);
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtn_CancelarActionPerformed
 
@@ -359,10 +388,18 @@ public class JDlg_Fornecedor extends javax.swing.JDialog {
     }//GEN-LAST:event_jBtn_PesquisarActionPerformed
 
     private void jBtn_IncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_IncluirActionPerformed
-        Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jPwfSenha, jCboNivel, jChbAtivo, jBtn_Confirmar, jBtn_Cancelar);
+        Util.habilitar(true, jTxt_Codigo, jTxt_Bairro, jTxt_Cidade, jTxt_Email,
+        jTxt_Endereco, jTxt_Estado, jTxt_Nome, jTxt_NomeSite, jTxt_Pais,
+        jFmt_Cep, jFmt_Cnpj, jFmt_DataCadastro, jFmt_DataNascimento, jFmt_Rg, jFmt_Telefone,
+        jBtn_Confirmar, jBtn_Cancelar);
+        
         Util.habilitar(false, jBtn_Incluir, jBtn_Alterar, jBtn_Excluir, jBtn_Pesquisar);
-        Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
-        jTxtCodigo.grabFocus();
+        
+        Util.limpar( jTxt_Codigo, jTxt_Bairro, jTxt_Cidade, jTxt_Email,
+        jTxt_Endereco, jTxt_Estado, jTxt_Nome, jTxt_NomeSite, jTxt_Pais,
+        jFmt_Cep, jFmt_Cnpj, jFmt_DataCadastro, jFmt_DataNascimento, jFmt_Rg, jFmt_Telefone);
+        
+        jTxt_Codigo.grabFocus();
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtn_IncluirActionPerformed
 

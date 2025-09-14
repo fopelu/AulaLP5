@@ -17,7 +17,8 @@ public class JDlg_Produtos extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setTitle("Cadastro de Produtos");
-        setLocationRelativeTo(null);  
+        setLocationRelativeTo(null);
+        
     }
 
     /**
