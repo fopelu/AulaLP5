@@ -4,6 +4,8 @@
  */
 package view;
 
+import tools.Util;
+
 /**
  *
  * @author danie
@@ -18,6 +20,9 @@ public class JDlg_Produtos extends javax.swing.JDialog {
         initComponents();
         setTitle("Cadastro de Produtos");
         setLocationRelativeTo(null);
+        Util.habilitar(false, jTxt_Codigo, jTxt_Descricao, jTxt_Material,
+                jTxt_Nome, jTxt_NomeFlor, jTxt_Preco, jFmt_Avaliacao,
+                jBtn_Cancelar, jBtn_Confirmar);
         
     }
 
@@ -31,10 +36,10 @@ public class JDlg_Produtos extends javax.swing.JDialog {
     private void initComponents() {
 
         jBtn_Alterar = new javax.swing.JButton();
-        jBtnExcluir = new javax.swing.JButton();
-        jBtnConfirmar = new javax.swing.JButton();
-        jBtnCancelar = new javax.swing.JButton();
-        jBtnPesquisar = new javax.swing.JButton();
+        jBtn_Excluir = new javax.swing.JButton();
+        jBtn_Confirmar = new javax.swing.JButton();
+        jBtn_Cancelar = new javax.swing.JButton();
+        jBtn_Pesquisar = new javax.swing.JButton();
         jBtn_Incluir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTxt_Codigo = new javax.swing.JTextField();
@@ -60,31 +65,31 @@ public class JDlg_Produtos extends javax.swing.JDialog {
             }
         });
 
-        jBtnExcluir.setText("Excluir");
-        jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
+        jBtn_Excluir.setText("Excluir");
+        jBtn_Excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnExcluirActionPerformed(evt);
+                jBtn_ExcluirActionPerformed(evt);
             }
         });
 
-        jBtnConfirmar.setText("Confirmar");
-        jBtnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+        jBtn_Confirmar.setText("Confirmar");
+        jBtn_Confirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnConfirmarActionPerformed(evt);
+                jBtn_ConfirmarActionPerformed(evt);
             }
         });
 
-        jBtnCancelar.setText("Cancelar");
-        jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        jBtn_Cancelar.setText("Cancelar");
+        jBtn_Cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnCancelarActionPerformed(evt);
+                jBtn_CancelarActionPerformed(evt);
             }
         });
 
-        jBtnPesquisar.setText("Pesquisar");
-        jBtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+        jBtn_Pesquisar.setText("Pesquisar");
+        jBtn_Pesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnPesquisarActionPerformed(evt);
+                jBtn_PesquisarActionPerformed(evt);
             }
         });
 
@@ -118,51 +123,48 @@ public class JDlg_Produtos extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jFmt_Avaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTxt_Material, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel7)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jFmt_Avaliacao, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jBtn_Incluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtn_Alterar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtn_Excluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtn_Confirmar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtn_Cancelar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBtn_Pesquisar))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jTxt_Codigo, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTxt_Material, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel7)))
-                        .addContainerGap())
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(jBtn_Incluir)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jBtn_Alterar)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jBtnExcluir)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jBtnConfirmar)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jBtnCancelar)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jBtnPesquisar)
-                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jTxt_Nome, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
+                                        .addComponent(jTxt_Preco))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel1)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(207, 207, 207)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTxt_Codigo, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel1)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(230, 230, 230)
-                                                .addComponent(jLabel5)))
-                                        .addGap(164, 164, 164))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTxt_Nome, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE)
-                                            .addComponent(jTxt_Preco))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel6)
-                                            .addComponent(jTxt_NomeFlor))))
-                                .addComponent(jTxt_Descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addContainerGap()))))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel5)
+                                    .addGap(185, 185, 185))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jTxt_NomeFlor)))))
+                    .addComponent(jTxt_Descricao, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,10 +202,10 @@ public class JDlg_Produtos extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtn_Incluir)
                     .addComponent(jBtn_Alterar)
-                    .addComponent(jBtnExcluir)
-                    .addComponent(jBtnConfirmar)
-                    .addComponent(jBtnCancelar)
-                    .addComponent(jBtnPesquisar))
+                    .addComponent(jBtn_Excluir)
+                    .addComponent(jBtn_Confirmar)
+                    .addComponent(jBtn_Cancelar)
+                    .addComponent(jBtn_Pesquisar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -211,45 +213,61 @@ public class JDlg_Produtos extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtn_AlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_AlterarActionPerformed
-        Util.habilitar(true, jTxtNome, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jPwfSenha, jCboNivel, jChbAtivo, jBtnConfirmar, jBtnCancelar);
-        Util.habilitar(false, jBtn_Incluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar, jTxtCodigo);
-        jTxtNome.grabFocus();
+        Util.habilitar(true, jTxt_Codigo, jTxt_Descricao, jTxt_Material,
+        jTxt_Nome, jTxt_NomeFlor, jTxt_Preco, jFmt_Avaliacao,
+        jBtn_Cancelar, jBtn_Confirmar);
+        
+        Util.habilitar(false, jBtn_Incluir, jBtn_Alterar, jBtn_Excluir, jBtn_Pesquisar, jTxt_Codigo);
+        
+        jTxt_Nome.grabFocus();
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtn_AlterarActionPerformed
 
-    private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
+    private void jBtn_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ExcluirActionPerformed
         // TODO add your handling code here:
-        Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
-        Util.perguntar("Deseja Excluir o registro?");
-    }//GEN-LAST:event_jBtnExcluirActionPerformed
+        if (Util.perguntar("Deseja realmente excluir o registro?")){
+            Util.limpar(jTxt_Codigo, jTxt_Descricao, jTxt_Material, jTxt_Nome, jTxt_NomeFlor, jTxt_Preco, jFmt_Avaliacao);
+            Util.mensagem("Registro excluído com sucesso!");
+        } else {
+            Util.mensagem("Exclusão cancelada.");
+        }
+    }//GEN-LAST:event_jBtn_ExcluirActionPerformed
 
-    private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jPwfSenha, jCboNivel, jChbAtivo, jBtnConfirmar, jBtnCancelar);
-        Util.habilitar(true, jBtn_Incluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
-        Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
+    private void jBtn_ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ConfirmarActionPerformed
+        Util.habilitar(false, jTxt_Codigo, jTxt_Descricao, jTxt_Material,
+        jTxt_Nome, jTxt_NomeFlor, jTxt_Preco, jFmt_Avaliacao,
+        jBtn_Cancelar, jBtn_Confirmar);
+        
+        Util.habilitar(true, jBtn_Incluir, jBtn_Alterar, jBtn_Excluir, jBtn_Pesquisar);
+        
+        Util.limpar(jTxt_Codigo, jTxt_Descricao, jTxt_Material, jTxt_Nome, jTxt_NomeFlor, jTxt_Preco, jFmt_Avaliacao);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnConfirmarActionPerformed
+    }//GEN-LAST:event_jBtn_ConfirmarActionPerformed
 
-    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jPwfSenha, jCboNivel, jChbAtivo, jBtnConfirmar, jBtnCancelar);
-        Util.habilitar(true, jBtn_Incluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
-        Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
+    private void jBtn_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_CancelarActionPerformed
+        Util.habilitar(false, jTxt_Codigo, jTxt_Descricao, jTxt_Material,
+        jTxt_Nome, jTxt_NomeFlor, jTxt_Preco, jFmt_Avaliacao,
+        jBtn_Cancelar, jBtn_Confirmar);
+                
+        Util.habilitar(true, jBtn_Incluir, jBtn_Alterar, jBtn_Excluir, jBtn_Pesquisar);
+        Util.limpar(jTxt_Codigo, jTxt_Descricao, jTxt_Material, jTxt_Nome, jTxt_NomeFlor, jTxt_Preco, jFmt_Avaliacao);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnCancelarActionPerformed
+    }//GEN-LAST:event_jBtn_CancelarActionPerformed
 
-    private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
+    private void jBtn_PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_PesquisarActionPerformed
         // TODO add your handling code here:
         Util.mensagem("Não Implementado");
-    }//GEN-LAST:event_jBtnPesquisarActionPerformed
+    }//GEN-LAST:event_jBtn_PesquisarActionPerformed
 
     private void jBtn_IncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_IncluirActionPerformed
-        Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtApelido, jFmtCpf, jFmtDataDeNascimento,
-            jPwfSenha, jCboNivel, jChbAtivo, jBtnConfirmar, jBtnCancelar);
+        Util.habilitar(true, jTxt_Codigo, jTxt_Descricao, jTxt_Material,
+        jTxt_Nome, jTxt_NomeFlor, jTxt_Preco, jFmt_Avaliacao,
+        jBtn_Cancelar, jBtn_Confirmar);
 
-        Util.habilitar(false, jBtn_Incluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+        Util.habilitar(false, jBtn_Incluir, jBtn_Alterar, jBtn_Excluir, jBtn_Pesquisar);
 
-        Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
-        jTxtCodigo.grabFocus();
+        Util.limpar(jTxt_Codigo, jTxt_Descricao, jTxt_Material, jTxt_Nome, jTxt_NomeFlor, jTxt_Preco, jFmt_Avaliacao);
+        jTxt_Codigo.grabFocus();
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtn_IncluirActionPerformed
 
@@ -296,12 +314,12 @@ public class JDlg_Produtos extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnCancelar;
-    private javax.swing.JButton jBtnConfirmar;
-    private javax.swing.JButton jBtnExcluir;
-    private javax.swing.JButton jBtnPesquisar;
     private javax.swing.JButton jBtn_Alterar;
+    private javax.swing.JButton jBtn_Cancelar;
+    private javax.swing.JButton jBtn_Confirmar;
+    private javax.swing.JButton jBtn_Excluir;
     private javax.swing.JButton jBtn_Incluir;
+    private javax.swing.JButton jBtn_Pesquisar;
     private javax.swing.JFormattedTextField jFmt_Avaliacao;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
