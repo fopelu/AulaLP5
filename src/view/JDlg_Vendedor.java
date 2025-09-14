@@ -4,6 +4,8 @@
  */
 package view;
 
+import tools.Util;
+
 /**
  *
  * @author danie
@@ -18,6 +20,9 @@ public class JDlg_Vendedor extends javax.swing.JDialog {
         initComponents();
         setTitle("Cadastro de Vendedor");
         setLocationRelativeTo(null);  
+        Util.habilitar(false, jTxt_Codigo, jTxt_Email, jTxt_Endereco,
+                jTxt_Nome, jFmt_CEP, jFmt_CPF, jFmt_Telefone,
+                jBtn_Confirmar, jBtn_Cancelar);
     }
 
     /**
@@ -30,10 +35,10 @@ public class JDlg_Vendedor extends javax.swing.JDialog {
     private void initComponents() {
 
         jBtn_Alterar = new javax.swing.JButton();
-        jBtnExcluir = new javax.swing.JButton();
-        jBtnConfirmar = new javax.swing.JButton();
-        jBtnCancelar = new javax.swing.JButton();
-        jBtnPesquisar = new javax.swing.JButton();
+        jBtn_Excluir = new javax.swing.JButton();
+        jBtn_Confirmar = new javax.swing.JButton();
+        jBtn_Cancelar = new javax.swing.JButton();
+        jBtn_Pesquisar = new javax.swing.JButton();
         jBtn_Incluir = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jTxt_Codigo = new javax.swing.JTextField();
@@ -59,31 +64,31 @@ public class JDlg_Vendedor extends javax.swing.JDialog {
             }
         });
 
-        jBtnExcluir.setText("Excluir");
-        jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
+        jBtn_Excluir.setText("Excluir");
+        jBtn_Excluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnExcluirActionPerformed(evt);
+                jBtn_ExcluirActionPerformed(evt);
             }
         });
 
-        jBtnConfirmar.setText("Confirmar");
-        jBtnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+        jBtn_Confirmar.setText("Confirmar");
+        jBtn_Confirmar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnConfirmarActionPerformed(evt);
+                jBtn_ConfirmarActionPerformed(evt);
             }
         });
 
-        jBtnCancelar.setText("Cancelar");
-        jBtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+        jBtn_Cancelar.setText("Cancelar");
+        jBtn_Cancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnCancelarActionPerformed(evt);
+                jBtn_CancelarActionPerformed(evt);
             }
         });
 
-        jBtnPesquisar.setText("Pesquisar");
-        jBtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+        jBtn_Pesquisar.setText("Pesquisar");
+        jBtn_Pesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBtnPesquisarActionPerformed(evt);
+                jBtn_PesquisarActionPerformed(evt);
             }
         });
 
@@ -113,6 +118,11 @@ public class JDlg_Vendedor extends javax.swing.JDialog {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jFmt_CPF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFmt_CPFActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Telefone");
 
@@ -142,13 +152,13 @@ public class JDlg_Vendedor extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jBtn_Alterar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBtnExcluir)
+                        .addComponent(jBtn_Excluir)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBtnConfirmar)
+                        .addComponent(jBtn_Confirmar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBtnCancelar)
+                        .addComponent(jBtn_Cancelar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBtnPesquisar))
+                        .addComponent(jBtn_Pesquisar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jFmt_Telefone)
@@ -167,7 +177,7 @@ public class JDlg_Vendedor extends javax.swing.JDialog {
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel4)
-                                .addGap(267, 267, 267)
+                                .addGap(199, 199, 199)
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel6))
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -184,7 +194,6 @@ public class JDlg_Vendedor extends javax.swing.JDialog {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTxt_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
@@ -211,10 +220,10 @@ public class JDlg_Vendedor extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBtn_Incluir)
                     .addComponent(jBtn_Alterar)
-                    .addComponent(jBtnExcluir)
-                    .addComponent(jBtnConfirmar)
-                    .addComponent(jBtnCancelar)
-                    .addComponent(jBtnPesquisar))
+                    .addComponent(jBtn_Excluir)
+                    .addComponent(jBtn_Confirmar)
+                    .addComponent(jBtn_Cancelar)
+                    .addComponent(jBtn_Pesquisar))
                 .addGap(15, 15, 15))
         );
 
@@ -222,47 +231,68 @@ public class JDlg_Vendedor extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtn_AlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_AlterarActionPerformed
-        Util.habilitar(true, jTxtNome, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jPwfSenha, jCboNivel, jChbAtivo, jBtnConfirmar, jBtnCancelar);
-        Util.habilitar(false, jBtn_Incluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar, jTxtCodigo);
-        jTxtNome.grabFocus();
+        Util.habilitar(true, jTxt_Codigo, jTxt_Email, jTxt_Endereco,
+        jTxt_Nome, jFmt_CEP, jFmt_CPF, jFmt_Telefone,
+        jBtn_Confirmar, jBtn_Cancelar);
+        
+        Util.habilitar(false, jBtn_Incluir, jBtn_Alterar, jBtn_Excluir, jBtn_Pesquisar, jTxt_Codigo);
+        
+        jTxt_Nome.grabFocus();
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtn_AlterarActionPerformed
 
-    private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
+    private void jBtn_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ExcluirActionPerformed
         // TODO add your handling code here:
-        Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
-        Util.perguntar("Deseja Excluir o registro?");
-    }//GEN-LAST:event_jBtnExcluirActionPerformed
+        if (Util.perguntar("Deseja realmente excluir o registro?")){
+            Util.limpar(jTxt_Codigo, jTxt_Email, jTxt_Endereco, jTxt_Nome, jFmt_CEP, jFmt_CPF, jFmt_Telefone);
+            Util.mensagem("Registro excluído com sucesso!");
+        } else {
+            Util.mensagem("Exclusão cancelada.");
+        }
+    }//GEN-LAST:event_jBtn_ExcluirActionPerformed
 
-    private void jBtnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnConfirmarActionPerformed
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jPwfSenha, jCboNivel, jChbAtivo, jBtnConfirmar, jBtnCancelar);
-        Util.habilitar(true, jBtn_Incluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
-        Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
+    private void jBtn_ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ConfirmarActionPerformed
+        Util.habilitar(false, jTxt_Codigo, jTxt_Email, jTxt_Endereco,
+        jTxt_Nome, jFmt_CEP, jFmt_CPF, jFmt_Telefone,
+        jBtn_Confirmar, jBtn_Cancelar);
+        
+        Util.habilitar(true, jBtn_Incluir, jBtn_Alterar, jBtn_Excluir, jBtn_Pesquisar);
+        
+        Util.limpar(jTxt_Codigo, jTxt_Email, jTxt_Endereco, jTxt_Nome, jFmt_CEP, jFmt_CPF, jFmt_Telefone);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnConfirmarActionPerformed
+    }//GEN-LAST:event_jBtn_ConfirmarActionPerformed
 
-    private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
-        Util.habilitar(false, jTxtCodigo, jTxtNome, jTxtApelido, jFmtCpf, jFmtDataDeNascimento, jPwfSenha, jCboNivel, jChbAtivo, jBtnConfirmar, jBtnCancelar);
-        Util.habilitar(true, jBtn_Incluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
-        Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
+    private void jBtn_CancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_CancelarActionPerformed
+        Util.habilitar(false, jTxt_Codigo, jTxt_Email, jTxt_Endereco,
+        jTxt_Nome, jFmt_CEP, jFmt_CPF, jFmt_Telefone,
+        jBtn_Confirmar, jBtn_Cancelar);
+        
+        Util.habilitar(true, jBtn_Incluir, jBtn_Alterar, jBtn_Excluir, jBtn_Pesquisar);
+        Util.limpar(jTxt_Codigo, jTxt_Email, jTxt_Endereco, jTxt_Nome, jFmt_CEP, jFmt_CPF, jFmt_Telefone);
         // TODO add your handling code here:
-    }//GEN-LAST:event_jBtnCancelarActionPerformed
+    }//GEN-LAST:event_jBtn_CancelarActionPerformed
 
-    private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
+    private void jBtn_PesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_PesquisarActionPerformed
         // TODO add your handling code here:
         Util.mensagem("Não Implementado");
-    }//GEN-LAST:event_jBtnPesquisarActionPerformed
+    }//GEN-LAST:event_jBtn_PesquisarActionPerformed
 
     private void jBtn_IncluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_IncluirActionPerformed
-        Util.habilitar(true, jTxtCodigo, jTxtNome, jTxtApelido, jFmtCpf, jFmtDataDeNascimento,
-            jPwfSenha, jCboNivel, jChbAtivo, jBtnConfirmar, jBtnCancelar);
+        Util.habilitar(true, jTxt_Codigo, jTxt_Email, jTxt_Endereco,
+        jTxt_Nome, jFmt_CEP, jFmt_CPF, jFmt_Telefone,
+        jBtn_Confirmar, jBtn_Cancelar);
 
-        Util.habilitar(false, jBtn_Incluir, jBtnAlterar, jBtnExcluir, jBtnPesquisar);
+        Util.habilitar(false, jBtn_Incluir, jBtn_Alterar, jBtn_Excluir, jBtn_Pesquisar);
 
-        Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
-        jTxtCodigo.grabFocus();
+        Util.limpar(jTxt_Codigo, jTxt_Email, jTxt_Endereco, jTxt_Nome, jFmt_CEP, jFmt_CPF, jFmt_Telefone);
+        
+        jTxt_Codigo.grabFocus();
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtn_IncluirActionPerformed
+
+    private void jFmt_CPFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFmt_CPFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFmt_CPFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -307,12 +337,12 @@ public class JDlg_Vendedor extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBtnCancelar;
-    private javax.swing.JButton jBtnConfirmar;
-    private javax.swing.JButton jBtnExcluir;
-    private javax.swing.JButton jBtnPesquisar;
     private javax.swing.JButton jBtn_Alterar;
+    private javax.swing.JButton jBtn_Cancelar;
+    private javax.swing.JButton jBtn_Confirmar;
+    private javax.swing.JButton jBtn_Excluir;
     private javax.swing.JButton jBtn_Incluir;
+    private javax.swing.JButton jBtn_Pesquisar;
     private javax.swing.JFormattedTextField jFmt_CEP;
     private javax.swing.JFormattedTextField jFmt_CPF;
     private javax.swing.JFormattedTextField jFmt_Telefone;
