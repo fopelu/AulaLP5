@@ -4,7 +4,11 @@
  */
 package tools;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
@@ -40,26 +44,40 @@ public class Util {
         JOptionPane.showMessageDialog(null, cad);
     }
     public static boolean perguntar(String cad){
-        JOptionPane.showConfirmDialog(null, cad);
-        return true;
+        int opcao = JOptionPane.showConfirmDialog(null, cad, cad, JOptionPane.YES_NO_OPTION);
+        if (opcao == JOptionPane.YES_OPTION){
+            return true;
+        }
+        if (opcao == JOptionPane.NO_OPTION){
+            return false;
+        }
+        return false;
     }
     public static int strToInt(String cad){
-        return Integer.valueOf(cad);
+        return Integer.parseInt(cad);
     }
     public static String intToStr(int num){
         return String.valueOf(num);
     }
     public static double strToDouble(String cad){
-        return Double.valueOf(cad);
+        return Double.parseDouble(cad);
     }
     public static String DoubleToStr(double num){
         return String.valueOf(num);
     }
     public static Date strToDate(String cad){
+        try {
+            SimpleDateFormat dataNascFormat = new SimpleDateFormat("dd/MM/yyyy");
+            return dataNascFormat.parse(cad);
+        } catch (ParseException ex) {
+            Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return null;
     }
-    public static String dateToStr(Date data){
-        return "";
+    public static String dateToStr(Date dataNasc){
+        if(dataNasc == null )return "";
+        SimpleDateFormat dataNascFormat = new SimpleDateFormat("dd/MM/yyyy");
+        return dataNascFormat.format(dataNasc);
     } 
 }
 
