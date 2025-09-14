@@ -47,11 +47,9 @@ public class Util {
         int opcao = JOptionPane.showConfirmDialog(null, cad, cad, JOptionPane.YES_NO_OPTION);
         if (opcao == JOptionPane.YES_OPTION){
             return true;
-        }
-        if (opcao == JOptionPane.NO_OPTION){
+        }else{
             return false;
         }
-        return false;
     }
     public static int strToInt(String cad){
         return Integer.parseInt(cad);

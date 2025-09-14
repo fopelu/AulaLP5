@@ -267,8 +267,12 @@ public class JDlg_Usuarios extends javax.swing.JDialog {
 
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
-        Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
-        Util.perguntar("Deseja Excluir o registro?");
+        if (Util.perguntar("Deseja realmente excluir o registro?")) {
+            Util.limpar(jTxtCodigo, jTxtApelido, jTxtNome, jFmtCpf, jFmtDataDeNascimento, jCboNivel, jChbAtivo, jPwfSenha);
+            Util.mensagem("Registro excluído com sucesso!");
+        } else {
+            Util.mensagem("Exclusão cancelada.");
+    }
     }//GEN-LAST:event_jBtnExcluirActionPerformed
 
 
