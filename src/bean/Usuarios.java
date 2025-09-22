@@ -133,6 +133,10 @@ public class Usuarios  implements java.io.Serializable {
     public void setAtivo(String ativo) {
         this.ativo = ativo;
     }
+    public void insert(Usuarios usuarios) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
 
 

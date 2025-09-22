@@ -129,7 +129,7 @@ public class JFrm_Principal extends javax.swing.JFrame {
 
     private void jMni_FornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMni_FornecedorActionPerformed
         // TODO add your handling code here:
-        JDlg_Fornecedor jDlg_Fornecedor = new JDlg_Fornecedor(null, true);
+        JDlg_Clientes jDlg_Fornecedor = new JDlg_Clientes(null, true);
         jDlg_Fornecedor.setVisible(true);
     }//GEN-LAST:event_jMni_FornecedorActionPerformed
 

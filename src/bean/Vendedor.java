@@ -2,8 +2,6 @@ package bean;
 // Generated 15/09/2025 10:21:41 by Hibernate Tools 4.3.1
 
 
-import java.math.BigDecimal;
-import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,10 +22,9 @@ public class Vendedor  implements java.io.Serializable {
 
      private int idvendedor;
      private String nome;
-     private BigDecimal salario;
-     private BigDecimal comissao;
+     private double salario;
+     private double comissao;
      private String vendedorcol;
-     private Set pedidoses = new HashSet(0);
 
     public Vendedor() {
     }
@@ -36,13 +33,12 @@ public class Vendedor  implements java.io.Serializable {
     public Vendedor(int idvendedor) {
         this.idvendedor = idvendedor;
     }
-    public Vendedor(int idvendedor, String nome, BigDecimal salario, BigDecimal comissao, String vendedorcol, Set pedidoses) {
+    public Vendedor(int idvendedor, String nome, double salario, double comissao, String vendedorcol) {
        this.idvendedor = idvendedor;
        this.nome = nome;
        this.salario = salario;
        this.comissao = comissao;
        this.vendedorcol = vendedorcol;
-       this.pedidoses = pedidoses;
     }
    
      @Id 
@@ -69,21 +65,21 @@ public class Vendedor  implements java.io.Serializable {
 
     
     @Column(name="salario", precision=10)
-    public BigDecimal getSalario() {
+    public double getSalario() {
         return this.salario;
     }
     
-    public void setSalario(BigDecimal salario) {
+    public void setSalario(double salario) {
         this.salario = salario;
     }
 
     
     @Column(name="comissao", precision=10)
-    public BigDecimal getComissao() {
+    public double getComissao() {
         return this.comissao;
     }
     
-    public void setComissao(BigDecimal comissao) {
+    public void setComissao(double comissao) {
         this.comissao = comissao;
     }
 
@@ -96,18 +92,6 @@ public class Vendedor  implements java.io.Serializable {
     public void setVendedorcol(String vendedorcol) {
         this.vendedorcol = vendedorcol;
     }
-
-@OneToMany(fetch=FetchType.LAZY, mappedBy="vendedor")
-    public Set getPedidoses() {
-        return this.pedidoses;
-    }
-    
-    public void setPedidoses(Set pedidoses) {
-        this.pedidoses = pedidoses;
-    }
-
-
-
 
 }
 

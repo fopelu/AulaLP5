@@ -45,9 +45,8 @@ public class Util {
         int opcao = JOptionPane.showConfirmDialog(null, cad, cad, JOptionPane.YES_NO_OPTION);
         if (opcao == JOptionPane.YES_OPTION){
             return true;
-        }else{
-            return false;
         }
+        return false;
     }
     public static int strToInt(String cad){
         return Integer.parseInt(cad);
@@ -58,16 +57,10 @@ public class Util {
     public static double strToDouble(String cad){
         return Double.parseDouble(cad);
     }
-    public static String DoubleToStr(double num){
+    public static String doubleToStr(double num){
         return String.valueOf(num);
     }
     public static Date strToDate(String cad){
-        try {
-            SimpleDateFormat dataNascFormat = new SimpleDateFormat("dd/MM/yyyy");
-            return dataNascFormat.parse(cad);
-        } catch (ParseException ex) {
-            Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
-        }
         return null;
     }
     public static String dateToStr(Date dataNasc){
