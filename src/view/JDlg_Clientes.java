@@ -345,13 +345,13 @@ public class JDlg_Clientes extends javax.swing.JDialog {
     private void jBtn_ExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ExcluirActionPerformed
         // TODO add your handling code here:
         if (Util.perguntar("Deseja realmente excluir o registro?")){
-            Util.limpar( jTxt_Codigo, jTxt_Bairro, jTxt_Cidade, jTxt_Email,
-            jTxt_Endereco, jTxt_Estado, jTxt_Nome, jTxt_NomeSite, jTxt_Pais,
-            jFmt_Cep, jFmt_Cnpj, jFmt_DataCadastro, jFmt_DataNascimento, jFmt_Rg, jFmt_Telefone);
             Util.mensagem("Registro excluído com sucesso!");
         } else {
             Util.mensagem("Exclusão cancelada.");
         }
+            Util.limpar( jTxt_Codigo, jTxt_Bairro, jTxt_Cidade, jTxt_Email,
+            jTxt_Endereco, jTxt_Estado, jTxt_Nome, jTxt_NomeSite, jTxt_Pais,
+            jFmt_Cep, jFmt_Cnpj, jFmt_DataCadastro, jFmt_DataNascimento, jFmt_Rg, jFmt_Telefone);
     }//GEN-LAST:event_jBtn_ExcluirActionPerformed
 
     private void jBtn_ConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtn_ConfirmarActionPerformed

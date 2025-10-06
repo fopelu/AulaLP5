@@ -27,8 +27,8 @@ public class Util {
     }
     public static void limpar(JComponent ... componentes){  
         for (int i = 0; i < componentes.length; i++) {
-            if (componentes[i] instanceof JTextField) { //Vê se o componentes pode ou já foi um JTextField/ JComboBox e etc
-                ((JTextField) componentes[i]).setText("");//Transforma o componentes[i] que é JComponent que não tem setText em jTextField que tem setText
+            if (componentes[i] instanceof JTextField) {
+                ((JTextField) componentes[i]).setText("");
             }
             if (componentes[i] instanceof JComboBox) {
                 ((JComboBox) componentes[i]).setSelectedIndex(-1); 
@@ -43,10 +43,12 @@ public class Util {
     }
     public static boolean perguntar(String cad){
         int opcao = JOptionPane.showConfirmDialog(null, cad, cad, JOptionPane.YES_NO_OPTION);
-        if (opcao == JOptionPane.YES_OPTION){
-            return true;
-        }
-        return false;
+        return opcao == JOptionPane.YES_OPTION;
+//        if (opcao == JOptionPane.YES_OPTION){
+//            return true;
+//        }else {
+//            return false;
+//        }
     }
     public static int strToInt(String cad){
         return Integer.parseInt(cad);
@@ -61,6 +63,12 @@ public class Util {
         return String.valueOf(num);
     }
     public static Date strToDate(String cad){
+        try {
+            SimpleDateFormat dataNascFormat = new SimpleDateFormat("dd/MM/yyyy");
+            return dataNascFormat.parse(cad);
+        } catch (ParseException ex) {
+            Logger.getLogger(Util.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return null;
     }
     public static String dateToStr(Date dataNasc){
