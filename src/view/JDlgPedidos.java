@@ -7,6 +7,7 @@ package view;
 
 import bean.Clientes;
 import bean.Pedidos;
+import bean.Vendedor;
 import dao.ClientesDAO;
 import java.util.List;
 import tools.Util;
@@ -38,8 +39,8 @@ public class JDlgPedidos extends javax.swing.JDialog {
         Pedidos pedidos = new Pedidos();
         pedidos.setClientes((Clientes)jCboClientes.getSelectedItem());
         pedidos.setIdpedidos(Util.strToInt(jTxtCodigo.getText()));
-        pedidos.setClientes(jCboClientes.getSelectedItem()));
-        pedidos.setVendedor(Util.strToInt(jCboVendedor.getSelectedItem()));
+        pedidos.setClientes((Clientes) jCboClientes.getSelectedItem()));
+        pedidos.setVendedor((Vendedor) jCboVendedor.getSelectedItem()));
         return pedidos;
     }
 
