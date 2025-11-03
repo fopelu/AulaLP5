@@ -29,11 +29,14 @@ public class JFrm_Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jToolBar1 = new javax.swing.JToolBar();
+        jBtnFClientes = new javax.swing.JButton();
+        jBtnFProdutos = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMnb_Cadastros = new javax.swing.JMenu();
         jMni_Usuarios = new javax.swing.JMenuItem();
         jMni_Vendedor = new javax.swing.JMenuItem();
-        jMni_Fornecedor = new javax.swing.JMenuItem();
+        jMni_Clientes = new javax.swing.JMenuItem();
         jMni_Produtos = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         jMni_Sair = new javax.swing.JMenuItem();
@@ -41,9 +44,33 @@ public class JFrm_Principal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jToolBar1.setRollover(true);
+
+        jBtnFClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-vendedora-24.png"))); // NOI18N
+        jBtnFClientes.setFocusable(false);
+        jBtnFClientes.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnFClientes.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBtnFClientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnFClientesActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jBtnFClientes);
+
+        jBtnFProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/icons8-produtos-24.png"))); // NOI18N
+        jBtnFProdutos.setFocusable(false);
+        jBtnFProdutos.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnFProdutos.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBtnFProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnFProdutosActionPerformed(evt);
+            }
+        });
+        jToolBar1.add(jBtnFProdutos);
+
         jMnb_Cadastros.setText("Cadastros");
 
-        jMni_Usuarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMni_Usuarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
         jMni_Usuarios.setText("Usuário");
         jMni_Usuarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,7 +79,7 @@ public class JFrm_Principal extends javax.swing.JFrame {
         });
         jMnb_Cadastros.add(jMni_Usuarios);
 
-        jMni_Vendedor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMni_Vendedor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.event.InputEvent.CTRL_MASK));
         jMni_Vendedor.setText("Vendedor");
         jMni_Vendedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -61,16 +88,16 @@ public class JFrm_Principal extends javax.swing.JFrame {
         });
         jMnb_Cadastros.add(jMni_Vendedor);
 
-        jMni_Fornecedor.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMni_Fornecedor.setText("Fornecedor");
-        jMni_Fornecedor.addActionListener(new java.awt.event.ActionListener() {
+        jMni_Clientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
+        jMni_Clientes.setText("Clientes");
+        jMni_Clientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMni_FornecedorActionPerformed(evt);
+                jMni_ClientesActionPerformed(evt);
             }
         });
-        jMnb_Cadastros.add(jMni_Fornecedor);
+        jMnb_Cadastros.add(jMni_Clientes);
 
-        jMni_Produtos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMni_Produtos.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         jMni_Produtos.setText("Produtos");
         jMni_Produtos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +107,7 @@ public class JFrm_Principal extends javax.swing.JFrame {
         jMnb_Cadastros.add(jMni_Produtos);
         jMnb_Cadastros.add(jSeparator1);
 
-        jMni_Sair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
+        jMni_Sair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, java.awt.event.InputEvent.SHIFT_MASK));
         jMni_Sair.setText("Sair");
         jMni_Sair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,11 +127,13 @@ public class JFrm_Principal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 252, Short.MAX_VALUE))
         );
 
         pack();
@@ -127,17 +156,27 @@ public class JFrm_Principal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMni_SairActionPerformed
 
-    private void jMni_FornecedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMni_FornecedorActionPerformed
+    private void jMni_ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMni_ClientesActionPerformed
         // TODO add your handling code here:
         JDlg_Clientes jDlg_Fornecedor = new JDlg_Clientes(null, true);
         jDlg_Fornecedor.setVisible(true);
-    }//GEN-LAST:event_jMni_FornecedorActionPerformed
+    }//GEN-LAST:event_jMni_ClientesActionPerformed
 
     private void jMni_ProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMni_ProdutosActionPerformed
         // TODO add your handling code here:
         JDlg_Produtos jDlg_Produtos = new JDlg_Produtos(null, true);
         jDlg_Produtos.setVisible(true);
     }//GEN-LAST:event_jMni_ProdutosActionPerformed
+
+    private void jBtnFProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnFProdutosActionPerformed
+        // TODO add your handling code here:
+        jMni_ProdutosActionPerformed(null);
+    }//GEN-LAST:event_jBtnFProdutosActionPerformed
+
+    private void jBtnFClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnFClientesActionPerformed
+        // TODO add your handling code here:
+        jMni_ClientesActionPerformed(null);
+    }//GEN-LAST:event_jBtnFClientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,14 +214,17 @@ public class JFrm_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnFClientes;
+    private javax.swing.JButton jBtnFProdutos;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMnb_Cadastros;
     private javax.swing.JMenu jMnb_Movimentos;
-    private javax.swing.JMenuItem jMni_Fornecedor;
+    private javax.swing.JMenuItem jMni_Clientes;
     private javax.swing.JMenuItem jMni_Produtos;
     private javax.swing.JMenuItem jMni_Sair;
     private javax.swing.JMenuItem jMni_Usuarios;
     private javax.swing.JMenuItem jMni_Vendedor;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }

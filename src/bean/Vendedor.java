@@ -93,6 +93,20 @@ public class Vendedor  implements java.io.Serializable {
         this.vendedorcol = vendedorcol;
     }
 
+    @Override
+    public String toString(){
+        return this.nome;
+    }
+    
+    public boolean equals(Object object){
+        if (object instanceof Vendedor){
+            Vendedor vendedor = (Vendedor)object;
+            if (this.getIdvendedor() == vendedor.getIdvendedor()){
+                return true;
+            }
+        }
+         return false;
+    }
 }
 
 

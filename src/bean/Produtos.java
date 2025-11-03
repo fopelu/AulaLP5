@@ -78,6 +78,19 @@ public class Produtos  implements java.io.Serializable {
         this.grupo = grupo;
     }
 
+        @Override
+    public String toString(){
+        return this.nome;
+    }
+            public boolean equals(Object object){
+        if (object instanceof Produtos){
+            Produtos produtos = (Produtos)object;
+            if (this.getIdprodutos()== produtos.getIdprodutos()){
+                return true;
+            }
+        }
+         return false;
+    }
 }
 
 

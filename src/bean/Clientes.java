@@ -157,6 +157,15 @@ public class Clientes  implements java.io.Serializable {
     public String toString(){
         return this.nome;
     }
+        public boolean equals(Object object){
+        if (object instanceof Clientes){
+            Clientes clientes = (Clientes)object;
+            if (this.getIdclientes()== clientes.getIdclientes()){
+                return true;
+            }
+        }
+         return false;
+    }
 }
 
 
