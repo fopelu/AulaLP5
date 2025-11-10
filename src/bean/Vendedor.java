@@ -98,6 +98,8 @@ public class Vendedor  implements java.io.Serializable {
         return this.nome;
     }
     
+    
+    @Override
     public boolean equals(Object object){
         if (object instanceof Vendedor){
             Vendedor vendedor = (Vendedor)object;

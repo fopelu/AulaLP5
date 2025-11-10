@@ -11,6 +11,7 @@ import bean.Pedidos;
 import bean.Vendedor;
 import dao.VendedorDAO;
 import dao.ClientesDAO;
+import java.util.ArrayList;
 import java.util.List;
 import tools.Util;
 
@@ -27,7 +28,7 @@ public class JDlgPedidos extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
-        Util.habilitar(true, jTxtCodigo, jTxtTotal, jCboClientes, jCboVendedor, jFmtData, jBtnConfirmar, jBtnCancelar, jTable1);
+        Util.habilitar(false, jTxtCodigo, jTxtTotal, jCboClientes, jCboVendedor, jFmtData, jBtnConfirmar, jBtnCancelar, jTable1);
         ClientesDAO clientesDAO = new ClientesDAO();
         List lista = (List) clientesDAO.listAll();
         for (int i = 0; i < lista.size(); i++) {
@@ -39,7 +40,9 @@ public class JDlgPedidos extends javax.swing.JDialog {
         for (Object object : listaVend) {
             jCboVendedor.addItem((Vendedor) object);
         }
-                
+        ControllerPedidosProdutos controllerPedidosProdutos = new ControllerPedidosProdutos();
+        controllerPedidosProdutos.setList(new ArrayList());
+        jTable1.setModel(controllerPedidosProdutos);
     }
     
     public Pedidos viewBean(){
@@ -377,7 +380,7 @@ public class JDlgPedidos extends javax.swing.JDialog {
         // TODO add your handling code here:
         JDlgPedidosProdutos jDlgPedidosProdutos =  new JDlgPedidosProdutos(null, true);
         jDlgPedidosProdutos.setVisible(true);
-        
+        jDlgPedidosProdutos.setTelaAnterior(this);
         
     }//GEN-LAST:event_jBtnIncluirProdActionPerformed
 

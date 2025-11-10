@@ -17,12 +17,15 @@ import tools.Util;
  */
 public class JDlgPedidosProdutos extends javax.swing.JDialog {
 
+    JDlgPedidos jDlgPedidos;
+    
     /**
      * Creates new form JDlgPedidosProdutos
      */
     public JDlgPedidosProdutos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setTitle("Pedidos Produtos");
         setLocationRelativeTo(null);
         Util.habilitar(false, jTxtValorUnitario, jTxtTotal);
         jTxtQuantidade.setText("1");
@@ -31,6 +34,10 @@ public class JDlgPedidosProdutos extends javax.swing.JDialog {
         for (Object object : lista) {
             jCboProdutos.addItem((Produtos) object);
         }
+    }
+    
+    public void setTelaAnterior(JDlgPedidos jDlgPedidos){
+       this.jDlgPedidos = jDlgPedidos;
     }
 
     /**
@@ -64,6 +71,12 @@ public class JDlgPedidosProdutos extends javax.swing.JDialog {
         });
 
         jLabel2.setText("Quantidade");
+
+        jTxtQuantidade.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTxtQuantidadeKeyReleased(evt);
+            }
+        });
 
         jLabel3.setText("Valor Unitário");
 
@@ -163,6 +176,17 @@ public class JDlgPedidosProdutos extends javax.swing.JDialog {
         int quant = Util.strToInt(jTxtQuantidade.getText());
         jTxtTotal.setText(Util.doubleToStr(quant*produtos.getValorUnitario()));
     }//GEN-LAST:event_jCboProdutosActionPerformed
+
+    private void jTxtQuantidadeKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTxtQuantidadeKeyReleased
+        // TODO add your handling code here:
+        if(jTxtQuantidade.getText().isEmpty()){
+            jTxtTotal.setText("");
+        }else {
+            Produtos produtos = (Produtos) jCboProdutos.getSelectedItem();
+            int quant = Util.strToInt(jTxtQuantidade.getText());
+            jTxtTotal.setText(Util.doubleToStr(quant*produtos.getValorUnitario()));
+        }
+    }//GEN-LAST:event_jTxtQuantidadeKeyReleased
 
     /**
      * @param args the command line arguments

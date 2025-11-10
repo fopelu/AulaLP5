@@ -82,6 +82,9 @@ public class Produtos  implements java.io.Serializable {
     public String toString(){
         return this.nome;
     }
+    
+    
+     @Override
             public boolean equals(Object object){
         if (object instanceof Produtos){
             Produtos produtos = (Produtos)object;
