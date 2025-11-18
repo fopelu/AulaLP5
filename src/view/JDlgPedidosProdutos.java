@@ -6,6 +6,7 @@
 package view;
 
 
+import bean.PedidosProdutos;
 import java.util.List;
 import dao.ProdutosDAO;
 import bean.Produtos;
@@ -161,6 +162,11 @@ public class JDlgPedidosProdutos extends javax.swing.JDialog {
 
     private void jBtnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnOKActionPerformed
         // TODO add your handling code here:
+        PedidosProdutos pedidosProdutos = new PedidosProdutos();
+        pedidosProdutos.setProdutos((Produtos) jCboProdutos.getSelectedItem());
+        pedidosProdutos.setQuantidade(Util.strToInt(jTxtQuantidade.getText()) );
+        pedidosProdutos.setValorUnitario(Util.strToDouble(jTxtValorUnitario.getText()) );
+        jDlgPedidos.controllerPedidosProdutos.addBean(pedidosProdutos);
         setVisible(false);
     }//GEN-LAST:event_jBtnOKActionPerformed
 

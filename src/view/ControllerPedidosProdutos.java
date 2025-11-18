@@ -27,8 +27,14 @@ public class ControllerPedidosProdutos extends AbstractTableModel {
     
     public void addBean(PedidosProdutos pedidosProdutos){
         this.lstPedidosProdutos.add(pedidosProdutos);
+        this.fireTableDataChanged();
     }
 
+    public void removeBean(int rowIndex){
+        this.lstPedidosProdutos.remove(rowIndex);
+        this.fireTableDataChanged();
+    }
+    
     @Override
     public int getRowCount() {
         return lstPedidosProdutos.size();
@@ -37,7 +43,7 @@ public class ControllerPedidosProdutos extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 4;
+        return 5;
     }
 
     @Override

@@ -21,6 +21,7 @@ import tools.Util;
  */
 public class JDlgPedidos extends javax.swing.JDialog {
 
+    ControllerPedidosProdutos controllerPedidosProdutos;
     /**
      * Creates new form JDlgPedidos
      */
@@ -28,7 +29,7 @@ public class JDlgPedidos extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
-        Util.habilitar(false, jTxtCodigo, jTxtTotal, jCboClientes, jCboVendedor, jFmtData, jBtnConfirmar, jBtnCancelar, jTable1);
+        
         ClientesDAO clientesDAO = new ClientesDAO();
         List lista = (List) clientesDAO.listAll();
         for (int i = 0; i < lista.size(); i++) {
@@ -40,7 +41,7 @@ public class JDlgPedidos extends javax.swing.JDialog {
         for (Object object : listaVend) {
             jCboVendedor.addItem((Vendedor) object);
         }
-        ControllerPedidosProdutos controllerPedidosProdutos = new ControllerPedidosProdutos();
+        controllerPedidosProdutos = new ControllerPedidosProdutos();
         controllerPedidosProdutos.setList(new ArrayList());
         jTable1.setModel(controllerPedidosProdutos);
     }
@@ -379,9 +380,8 @@ public class JDlgPedidos extends javax.swing.JDialog {
     private void jBtnIncluirProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnIncluirProdActionPerformed
         // TODO add your handling code here:
         JDlgPedidosProdutos jDlgPedidosProdutos =  new JDlgPedidosProdutos(null, true);
-        jDlgPedidosProdutos.setVisible(true);
         jDlgPedidosProdutos.setTelaAnterior(this);
-        
+        jDlgPedidosProdutos.setVisible(true);
     }//GEN-LAST:event_jBtnIncluirProdActionPerformed
 
     private void jBtnAlterarProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnAlterarProdActionPerformed
@@ -393,7 +393,8 @@ public class JDlgPedidos extends javax.swing.JDialog {
     private void jBtnExcluirProdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirProdActionPerformed
         // TODO add your handling code here:
         if(Util.perguntar("Deseja Excluir?" )== true ){
-            
+            int rowindex = jTable1.getSelectedRow();
+            controllerPedidosProdutos.removeBean(rowindex);
         }
     }//GEN-LAST:event_jBtnExcluirProdActionPerformed
 
