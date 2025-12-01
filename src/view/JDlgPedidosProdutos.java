@@ -19,7 +19,7 @@ import tools.Util;
 public class JDlgPedidosProdutos extends javax.swing.JDialog {
 
     JDlgPedidos jDlgPedidos;
-    
+    private boolean incluir;
     /**
      * Creates new form JDlgPedidosProdutos
      */
@@ -37,8 +37,14 @@ public class JDlgPedidosProdutos extends javax.swing.JDialog {
         }
     }
     
-    public void setTelaAnterior(JDlgPedidos jDlgPedidos){
+    public void setTelaAnterior(JDlgPedidos jDlgPedidos, PedidosProdutos pedidosProdutos){
        this.jDlgPedidos = jDlgPedidos;
+       incluir = true;
+       if (pedidosProdutos != null){
+           incluir = false;
+           jCboProdutos.setSelectedItem(pedidosProdutos.getProdutos());
+           jTxtQuantidade.setText(Util.intToStr(pedidosProdutos.getQuantidade()));
+       }
     }
 
     /**
@@ -166,6 +172,9 @@ public class JDlgPedidosProdutos extends javax.swing.JDialog {
         pedidosProdutos.setProdutos((Produtos) jCboProdutos.getSelectedItem());
         pedidosProdutos.setQuantidade(Util.strToInt(jTxtQuantidade.getText()) );
         pedidosProdutos.setValorUnitario(Util.strToDouble(jTxtValorUnitario.getText()) );
+        if(incluir == false){
+            jDlgPedidos.controllerPedidosProdutos.removeBean( jDlgPedidos.getjTable1().getSelectedRow() );
+        }
         jDlgPedidos.controllerPedidosProdutos.addBean(pedidosProdutos);
         setVisible(false);
     }//GEN-LAST:event_jBtnOKActionPerformed
